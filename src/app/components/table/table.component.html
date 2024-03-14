@@ -1,0 +1,21 @@
+<h2>"Compomnente hijo" Tabla del componente hijo</h2>
+<h3>{{tituloTabla}}</h3>
+<table class="table table-striped-columns">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for (user of usuarios; track $index) {
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+

@@ -1,0 +1,9 @@
+.nombre{
+    font-size: 40px;
+    font-style: italic;
+    font-weight: bold;
+    color: chocolate; 
+}
+.container{
+    margin-top: 100px;
+}

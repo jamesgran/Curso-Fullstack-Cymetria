@@ -1,0 +1,17 @@
+<h2 class="titulo">{{titulo}}</h2>
+<span>{{edad}}</span>
+
+@if (ocultar) {
+<p class="parrafo">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+Eum deleniti dolorem delectus ex dignissimos officiis iure consequuntur deserunt vitae praesentium enim accusantium, 
+temporibus consequatur id reiciendis quo eveniet sint? Excepturi.
+</p>
+}
+<hr/>
+
+<app-table [usuarios]="users" [tituloTabla]="titulo" ></app-table>
+
+<h3>Este es el contador</h3>
+<app-contador (incrementarValor)="recibirContador($event)"></app-contador>
+<span>Este es el valor del contador: {{contador}}</span>

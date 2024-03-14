@@ -1,0 +1,39 @@
+
+<form [formGroup]="clienteForm" (submit)="crearCliente()" class="container">
+
+  <h2 class="text-center">Añadir Cliente</h2>
+
+
+  <div class="mb3">
+    <label for="nombre" class="form-label">Nombre:</label>
+    <input type="text" id="nombre" formControlName="nombre" class="form-control" placeholder="Ingrese el nombre" />
+  </div>
+  <div class="mb-3">
+    <label for="direccion" class="form-label">Direccion:</label>
+    <input type="text" id="direccion" formControlName="direccion" class="form-control" placeholder="Ingrese la direccion"/>
+  </div>
+  <div class="mb-3">
+    <label for="telefono" class="form-label">Telefono:</label>
+    <input type="text" id="telefono" formControlName="telefono" class="form-control" placeholder="Ingrese el telefono" />
+  </div>
+  <div class="mb-3">
+    <label for="tipoDocumento" class="form-label">Tipo Documento:</label>
+    <input type="text" id="tipoDocumento" formControlName="tipoDocumento" class="form-control" placeholder="Ingrese el tipo de documento"/>
+  </div>
+  <div class="mb-3">
+    <label for="noDocumento" class="form-label">No. Documento:</label>
+    <input type="text" id="noDocumento" formControlName="noDocumento" class="form-control" placeholder="Ingrese el numero de documento"/>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email:</label>
+    <input type="text" id="email" formControlName="email" class="form-control" placeholder="Ingrese el email" />
+  </div>
+
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-3">Guardar</button>
+    
+    <button type="button" class="btn btn-danger mb-3">
+      <a routerLink="./../clientes">Cancelar</a>
+    </button>
+  </div>
+</form>
