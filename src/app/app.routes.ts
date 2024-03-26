@@ -7,6 +7,8 @@ import { VerClientesComponent } from './pages/clientes/ver-clientes/ver-clientes
 import { AgregarClientesComponent } from './pages/clientes/agregar-clientes/agregar-clientes.component';
 import { AutenticacionComponent } from './auth/autenticacion/autenticacion.component';
 import { authGuard } from './guards/auth/auth.guard';
+import { VerUsuariosComponent } from './pages/usuarios/ver-usuarios/ver-usuarios.component';
+import { AgregarUsuarioComponent } from './pages/usuarios/agregar-usuario/agregar-usuario.component';
 
 export const routes: Routes = [
   {
@@ -53,6 +55,16 @@ export const routes: Routes = [
         path: 'add-cliente',
         title: 'Añadir Clientes',
         component: AgregarClientesComponent,
+      },
+      {
+        path: 'usuarios',
+        title: 'Ver Usuarios',
+        component: VerUsuariosComponent,
+      },
+      {
+        path: 'add-usuario',
+        title: 'Añadir Usuarios',
+        component: AgregarUsuarioComponent,
       },
     ],
   },

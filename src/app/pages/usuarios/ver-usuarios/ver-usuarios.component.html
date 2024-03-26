@@ -1,0 +1,43 @@
+<div class="container m-4 p-3">
+    <table class="table table-striped-columns">
+        <thead>
+            <tr>
+                <th scope="col">Item</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Tipo Documento</th>
+                <th>No Documento</th>
+                <th>rol</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @for (usuario of usuarios; track $index) {
+            <tr>
+                <td scope>{{$index+1}}</td>
+                <td>{{usuario.nombre}}</td>
+                <td>{{usuario.mail}}</td>
+                <td>{{usuario.tipoDocumento}}</td>
+                <td>{{usuario.noDocumento}}</td>
+                <td>
+                    <select class="form-control" [(ngModel)] = "usuario.rol" (change)="actualizarRol(usuario )">
+                        @for (rol of roles; track $index){
+                            <option [value]="rol">{{rol}}</option>
+                        }
+                        
+                    </select>
+                </td>
+                <td>{{usuario.estado}}</td>
+                <td>
+                    <a class="btn btn-outline-success m-1 "><i class="fa-regular fa-pen-to-square"></i></a>
+                    <a class="btn btn-outline-danger m-1" (click)="eliminarUsuario(usuario._id)"><i class="fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <div class="container">
+        <button class="btn btn-primary" (click)="crearUsuario()">Crear Usuario</button>
+    </div>

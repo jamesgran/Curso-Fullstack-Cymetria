@@ -14,7 +14,7 @@ export class ClientesService {
   constructor(private httpClient: HttpClient) {  }
 
   get token (): string {
-    return localStorage.getItem('token') || ''
+    return localStorage.getItem('token') || '';
   }
 
   get headers (){

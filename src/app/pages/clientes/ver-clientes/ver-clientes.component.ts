@@ -6,6 +6,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { ClientesService } from '../../../services/clientes/clientes.service';
 import { Router } from '@angular/router';
 import { RUTAS } from '../../../core/enum/rutas.enum';
+import { PermisosDirective } from '../../../core/directives/permisos/permisos.directive';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { RUTAS } from '../../../core/enum/rutas.enum';
   standalone: true,
   templateUrl: './ver-clientes.component.html',
   styleUrl: './ver-clientes.component.css',
-  imports: [AgregarClientesComponent, SweetAlert2Module],
+  imports: [AgregarClientesComponent, SweetAlert2Module, PermisosDirective],
 })
 export class VerClientesComponent implements OnInit {
   misClientes: Cliente[] = [];
@@ -29,9 +30,6 @@ export class VerClientesComponent implements OnInit {
       console.log(data);
       this.misClientes = data.clientes;
     })
-
-
-
 
   }
 

@@ -18,10 +18,10 @@ export class PermisosDirective implements OnInit {
 
   constructor(
     private templateRef: TemplateRef<any>,
-    private viewContainer: ViewContainerRef,
+    private viewContainer: ViewContainerRef,//permite ver, limpiar directivas  
     private autenticacionService: AutenticacionService
   ) {}
-
+ 
   ngOnInit(): void {
     this.usuario = this.autenticacionService.usuario;
     this.actualizarVista();

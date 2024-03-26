@@ -19,7 +19,7 @@ export class AutenticacionService {
   constructor(private httpClient: HttpClient, private router: Router) {}
 
   get token(): string{
-    return localStorage.getItem('token') || '';
+    return localStorage.getItem('token') || "";
   }
 
   validarToken(): Observable<boolean>{

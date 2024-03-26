@@ -1,42 +1,46 @@
-<div class="container m-4 p-3">
-    <table class="table table-striped-columns">
-        <thead>
-            <tr>
-                <th scope="col">Item</th>
-                <th>Nombre</th>
-                <th>Direccion</th>
-                <th>Telefono</th>
-                <th>Tipo de Documento</th>
-                <th>No Documento</th>
-                <th>Email</th>
-                <th>Estado</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
+<ng-template [appPermisos]="['ADMIN'] ">
 
-        <tbody>
-            @for (cliente of misClientes; track $index) {
-            <tr>
-                <td scope>{{$index+1}}</td>
-                <td>{{cliente.nombre}}</td>
-                <td>{{cliente.direccion}}</td>
-                <td>{{cliente.telefono}}</td>
-                <td>{{cliente.tipoDocumento}}</td>
-                <td>{{cliente.noDocumento}}</td>
-                <td>{{cliente.email}}</td>
-                <td>{{cliente.estado}}</td>
-                <td>
-                    <a class="btn btn-outline-success m-1 "><i class="fa-regular fa-pen-to-square"></i></a>
-                    <a class="btn btn-outline-danger m-1" (click)="eliminarCliente(cliente._id)"><i class="fa-solid fa-trash"></i></a>
-                </td>
-            </tr>
-            }
-        </tbody>
-    </table>
-    <div class="container">
-        <button class="btn btn-primary" (click)="crearCliente()">Crear Cliente</button>
+    <div class="container m-4 p-3">
+        <table class="table table-striped-columns">
+            <thead>
+                <tr>
+                    <th scope="col">Item</th>
+                    <th>Nombre</th>
+                    <th>Direccion</th>
+                    <th>Telefono</th>
+                    <th>Tipo de Documento</th>
+                    <th>No Documento</th>
+                    <th>Email</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @for (cliente of misClientes; track $index) {
+                <tr>
+                    <td scope>{{$index+1}}</td>
+                    <td>{{cliente.nombre}}</td>
+                    <td>{{cliente.direccion}}</td>
+                    <td>{{cliente.telefono}}</td>
+                    <td>{{cliente.tipoDocumento}}</td>
+                    <td>{{cliente.noDocumento}}</td>
+                    <td>{{cliente.email}}</td>
+                    <td>{{cliente.estado}}</td>
+                    <td>
+                        <a class="btn btn-outline-success m-1 "><i class="fa-regular fa-pen-to-square"></i></a>
+                        <a class="btn btn-outline-danger m-1" (click)="eliminarCliente(cliente._id)"><i
+                                class="fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+        <div class="container">
+            <button class="btn btn-primary" (click)="crearCliente()">Crear Cliente</button>
+        </div>
+        @if (showMenu) {
+        <app-agregar-clientes (addCustomer)="getData($event)"></app-agregar-clientes>
+        }
     </div>
-    @if (showMenu) {
-      <app-agregar-clientes (addCustomer)="getData($event)"></app-agregar-clientes>
-     } 
-  
+</ng-template>

@@ -5,6 +5,8 @@ export enum RUTAS{
     CONTACTO = 'home/contacto',
     CLIENTES = 'home/clientes',
     ADD_CLIENTES = 'home/add-cliente',
-    SERVICIOS = 'home/servicio'
+    SERVICIOS = 'home/servicio',
+    USUARIOS = 'home/usuarios',
+    ADD_USUARIO = 'home/add-usuario'
 
 }
